@@ -17,7 +17,7 @@ const cookieParser = require('cookie-parser');
 const hpp = require('hpp');
 const path = require('path');
 const app = express();
-
+// Start express app
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
