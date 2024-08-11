@@ -26,7 +26,6 @@ if (updateUser) {
     form.append('name', document.getElementById('name').value);
     form.append('email', document.getElementById('email').value);
     form.append('photo', document.getElementById('photo').files[0]);
-    console.log('form', form);
     updateSettings(form, 'data');
   });
 }
@@ -59,6 +58,4 @@ if (bookBtn) {
     const { tourId } = e.target.dataset;
     bookTour(tourId);
   });
-} else {
-  console.log('element not found');
 }

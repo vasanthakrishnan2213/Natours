@@ -18,7 +18,7 @@ export const bookTour = async (tourId) => {
     const stripe = await initStripe();
 
     const response = await axios(
-      `http://127.0.0.1:8000/api/v1/bookings/checkout-session/${tourId}`,
+      `/api/v1/bookings/checkout-session/${tourId}`,
     );
     const sessionId = response.data.session?.id;
     const result = await stripe.redirectToCheckout({ sessionId });
@@ -26,7 +26,6 @@ export const bookTour = async (tourId) => {
       throw new Error(result.error.message);
     }
   } catch (err) {
-    console.error('Error during booking:', err);
     showAlert('error', err.message || 'Booking failed');
   }
 };
