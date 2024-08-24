@@ -37,19 +37,24 @@ app.use(
           "'self'",
           'https://js.stripe.com',
           'https://api.mapbox.com',
-          "'blob:'", // Add this line
+          "'blob:'", // Added this line
         ],
-        workerSrc: ["'self'", 'blob:'], // Add this line
+        workerSrc: ["'self'", 'blob:'], // Added this line
         connectSrc: [
           "'self'",
           'https://api.mapbox.com',
           'ws://127.0.0.1:60348',
         ],
         imgSrc: ["'self'", 'data:'],
+        frameSrc: [
+          "'self'",
+          'https://js.stripe.com', // Added this line to allow framing Stripe
+        ], 
       },
     },
   }),
 );
+
 
 app.use(compression());
 //  Development logging

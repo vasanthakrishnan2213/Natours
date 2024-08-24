@@ -9,6 +9,7 @@ async function initStripe() {
     );
     return stripe;
   } catch (err) {
+    showAlert('error', 'error')
     return null;
   }
 }
